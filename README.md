@@ -34,6 +34,7 @@ root@strrrry:~# python berry.py
 	   \         /   
 	    `.     ,'    
 	      `-.-'      
+	             v0.0.1
 
 Select a BruteForcer:
 

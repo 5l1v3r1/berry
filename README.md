@@ -6,16 +6,12 @@ Currently in beta: v0.0.1
 
 ### Install Requirements
 ```
-root@strrrry:~# pip install -r requirements.txt
+root@strrrry:~/berry# pip install -r requirements.txt
 ```
 
 ### Run Berry
 ```
-root@strrrry:~# cd Desktop
-root@strrrry:~# cd berry/berry 
-root@strrrry:~# ls
-berry.py	wordlists
-root@strrrry:~# python berry.py
+root@strrrry:~/berry/berry# python berry.py
 
 	  ,/         \.  
 	 ((           )) 

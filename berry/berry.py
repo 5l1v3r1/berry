@@ -64,7 +64,7 @@ passlist = ['12345','abc123','password','computer','123456','tigger','1234','a1b
 useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 login = 'https://mobile.twitter.com/session'
 login2 = 'https://www.facebook.com/login.php?login_attempt=1'
-version = "0.0.1"
+version = "0.0.1]"
 
 subprocess.call('clear', shell=True)
 
@@ -86,7 +86,7 @@ def main():
 	print("\t   \         /   ")
 	print("\t    `.     ,'    ")
 	print("\t      `-.-'      ")
-	print("\t             v" + version)
+	print("\t             [v" + version)
 	
         print "\nSelect a BruteForcer:"
         print

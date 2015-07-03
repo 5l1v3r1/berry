@@ -30,7 +30,7 @@ root@strrrry:~/berry/berry# python berry.py
 	   \         /   
 	    `.     ,'    
 	      `-.-'      
-	             v0.0.1
+	             [v0.0.1]
 
 Select a BruteForcer:
 
@@ -42,5 +42,5 @@ Select a BruteForcer:
 	 [0] Exit
 
 
-berry > 
+berry >  
 ```

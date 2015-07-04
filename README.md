@@ -37,10 +37,12 @@ Select a BruteForcer:
 	 [1] Twitter BruteForcer
 	 [2] Facebook BruteForcer
 	 [3] Gmail BruteForcer
-	 [4] Start Webgui
+	 [4] Start Webgui (Currently Still in Beta)
 
 	 [0] Exit
 
 
-berry >  
+berry > 
+
+ 
 ```

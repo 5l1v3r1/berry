@@ -7,7 +7,8 @@ import random
 import subprocess
 import mechanize
 import cookielib
-import webbrowser
+import SimpleHTTPServer
+import SocketServer
 from colorama import *
 init()
 
@@ -93,7 +94,7 @@ def main():
         print "\t [1] Twitter BruteForcer"
         print "\t [2] Facebook BruteForcer"
         print "\t [3] Gmail BruteForcer"
-        print "\t [4] Start Webgui"
+        print "\t [4] Start Webgui (Currently Still in Beta)"
 	print "\n\t [0] Exit"
         print
         print
@@ -111,18 +112,31 @@ def main():
 
 
         if choice == '3':
+
             username = raw_input("Enter Gmail: ")
 
 
         if choice == '4':
-        	def test():
-        		webbrowser.open("http://www.google.com")
-    		test()
+        	
+			PORT = 3939
+
+			def web_start():
+			    Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+			    httpd = SocketServer.TCPServer(("", PORT), Handler)
+			    print "Serving on Port:", PORT, "[CTRL+C to Quit]"
+			    httpd.serve_forever()
+			    try:
+			    	pass
+			    except KeyboardInterrupt:
+			    	print("[!] Quiting Session...")
+			web_start()
 
         if choice == "exit" or choice == '0':
+            raw_input("\t[!] Quiting Session...")
+            print("\n[!] Session Closed.")
             exit()
 
 if __name__ == '__main__':
-	main()
+		  main()
 		
 	                                             

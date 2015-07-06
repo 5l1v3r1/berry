@@ -1,5 +1,5 @@
 ### Berry
-Berry is taking brute forcing to a whole new level. By implementing my own passlist and allowing users to brute force Gmail, Twiiter, and Facebook accounts, you've become unstoppable!
+Berry is taking brute forcing to a whole new level. By implementing a default passlist and allowing users to brute force Gmail, Twiiter, and Facebook accounts, simultaneously, you've become unstoppable.
 
 ### Version
 Currently in beta: v0.0.1

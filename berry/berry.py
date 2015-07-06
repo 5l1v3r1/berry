@@ -66,6 +66,7 @@ useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1
 login = 'https://mobile.twitter.com/session'
 login2 = 'https://www.facebook.com/login.php?login_attempt=1'
 version = "0.0.1]"
+PORT = 3939
 
 subprocess.call('clear', shell=True)
 
@@ -103,40 +104,32 @@ def main():
         print
 
         if choice == '1':
-        	
             username = raw_input("Enter Twitter username: ")
-
         if choice == '2':
-        
-            username = raw_input("Enter Facebook username: ")
-
-
+        	username = raw_input("Enter Facebook username: ")
         if choice == '3':
-
             username = raw_input("Enter Gmail: ")
-
-
         if choice == '4':
-        	
-			PORT = 3939
-
-			def web_start():
-			    Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-			    httpd = SocketServer.TCPServer(("", PORT), Handler)
-			    print "Serving on Port:", PORT, "[CTRL+C to Quit]"
-			    httpd.serve_forever()
-			    try:
-			    	pass
-			    except KeyboardInterrupt:
-			    	print("[!] Quiting Session...")
-			web_start()
-
+        	web_start()
         if choice == "exit" or choice == '0':
             raw_input("\t[!] Quiting Session...")
             print("\n[!] Session Closed.")
             exit()
 
+def web_start():
+	Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+	httpd = SocketServer.TCPServer(("", PORT), Handler)
+	print "Serving on Port:", PORT, "[CTRL+C to Quit]"
+	httpd.serve_forever()
+	try:
+		pass
+	except KeyboardInterrupt:
+		print("[!] Quiting Session...")
+
+
+
+
 if __name__ == '__main__':
-		  main()
+	main()
 		
 	                                             

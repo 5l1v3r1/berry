@@ -82,7 +82,7 @@ Select option:
 berry > 1
 
 [!] DDoS Mode Loaded
-Website to DDoS: 
+Website to DDoS: www.target.com
 Number of Packets: 5
 [Tue Jul  7 19:03:35 2015] [DDoS Attack Serving on port: 80..]
 [Tue Jul  7 19:03:35 2015] [DDoS Attack Serving on port: 80..]

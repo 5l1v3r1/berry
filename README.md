@@ -37,7 +37,7 @@ Select option:
 	 [1] Berry DDoSer
 	 [2] Start Webgui (Currently Still in Beta)
 
-	 [0] Exit
+0) To Exit
 
 
 berry >  

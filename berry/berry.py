@@ -36,7 +36,7 @@ def main():
         print
         print "\t [1] Berry DDoSer"
         print "\t [2] Start Webgui (Currently Still in Beta)"
-	print "\n\t [0] Exit"
+	print "\n0) To Exit"
         print
         print
 
@@ -67,7 +67,6 @@ def main():
         		dos()
 
         if choice == '2':
-
 			app = Flask(__name__)
 
 			@app.route("/")
@@ -98,8 +97,7 @@ def main():
             exit()
 
 
-
 if __name__ == '__main__':
-	main()
+		main()
 		
 	                                             

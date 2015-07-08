@@ -41,14 +41,16 @@ root@strrrry:~/berry/berry# python berry.py
 Select option:
 
 	 [1] Berry DDoSer
-	 [2] Start Webgui (Currently Still in Beta)
+	 [2] Berry Port Scanner (Currently Still in Beta)
+	 [3] Berry Web
 
 0) To Exit
 
 
-berry >  
+berry > 
 ```
 
+### Example
 ```
 root@strrrry:~/berry/berry# python berry.py
 
@@ -74,26 +76,29 @@ root@strrrry:~/berry/berry# python berry.py
 Select option:
 
 	 [1] Berry DDoSer
-	 [2] Start Webgui (Currently Still in Beta)
+	 [2] Berry Port Scanner (Currently Still in Beta)
+	 [3] Berry Web
 
 0) To Exit
 
 
 berry > 1
 
-[!] DDoS Mode Loaded
-Host: http://www.target.com or www.target.com
+NOTE - Enter IP or URL
+
+[!] DDoS Mode Loading
+Enter Host: www.target.com or http://www.target.com or 72.246.56.200
 Number of Packets: 5
 <--Loading DDoS Attack-->
-[Tue Jul  7 19:03:35 2015] [DDoS Attack Serving on port: 80..]
-[184.26.136.64]
-[Tue Jul  7 19:03:35 2015] [DDoS Attack Serving on port: 80..]
-[184.26.136.64]
-[Tue Jul  7 19:03:36 2015] [DDoS Attack Serving on port: 80..]
-[184.26.136.64]
-[Tue Jul  7 19:03:36 2015] [DDoS Attack Serving on port: 80..]
-[184.26.136.64]
-[Tue Jul  7 19:03:36 2015] [DDoS Attack Serving on port: 80..]
-[184.26.136.64]
+[Wed Jul  8 18:38:22 2015] [Attack Serving on port: 80]
+[72.246.56.200]
+[Wed Jul  8 18:38:23 2015] [Attack Serving on port: 80]
+[72.246.56.200]
+[Wed Jul  8 18:38:23 2015] [Attack Serving on port: 80]
+[72.246.56.200]
+[Wed Jul  8 18:38:23 2015] [Attack Serving on port: 80]
+[72.246.56.200]
+[Wed Jul  8 18:38:23 2015] [Attack Serving on port: 80]
+[72.246.56.200]
 root@strrrry:~/berry/berry#
 ```

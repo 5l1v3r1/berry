@@ -15,7 +15,6 @@ __website = 'http://abrupt.github.io/'
 
 
 import time, os, sys, string, random, subprocess, socket
-import httplib
 from flask import Flask
 from termcolor import colored, cprint
 from colorama import *

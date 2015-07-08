@@ -82,12 +82,18 @@ Select option:
 berry > 1
 
 [!] DDoS Mode Loaded
-Website to DDoS: www.target.com
+Host: http://www.target.com or www.target.com
 Number of Packets: 5
+<--Loading DDoS Attack-->
 [Tue Jul  7 19:03:35 2015] [DDoS Attack Serving on port: 80..]
+[184.26.136.64]
 [Tue Jul  7 19:03:35 2015] [DDoS Attack Serving on port: 80..]
+[184.26.136.64]
 [Tue Jul  7 19:03:36 2015] [DDoS Attack Serving on port: 80..]
+[184.26.136.64]
 [Tue Jul  7 19:03:36 2015] [DDoS Attack Serving on port: 80..]
+[184.26.136.64]
 [Tue Jul  7 19:03:36 2015] [DDoS Attack Serving on port: 80..]
+[184.26.136.64]
 root@strrrry:~/berry/berry#
 ```

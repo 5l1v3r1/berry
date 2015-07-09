@@ -14,7 +14,7 @@ __email = 'zeekthegeek291@gamil.com'
 __website = 'http://abrupt.github.io/'
 
 
-import time, os, sys, string, random, subprocess, socket
+import time,os,sys,string,random,subprocess,re,socket,httplib
 from flask import Flask
 from termcolor import colored, cprint
 from colorama import *
@@ -23,6 +23,10 @@ init()
 #Extra Shizzzz / Not really important :/
 version = "0.0.1]"
 subprocess.call('clear', shell=True)
+
+def user_agents():
+	useragents = []
+	return(useragents)
 
 def main():
 	#Main Banner
@@ -108,8 +112,7 @@ def main():
 				<head>
 					<style>
 					 body{
-					 	background-image: url('http://www.hdwallpapersos.com/wp-content/uploads/2014/08/337334.jpg');
-					 	background-size: cover;
+					 	background-color: #000;
 					}
 					h1 {
 						font-size: 45px

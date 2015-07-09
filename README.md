@@ -1,5 +1,5 @@
 ### Berry
-Berry DDoSer is going to take ddosing to the next level... Currently it is under no proxy so provided you have a VPN on, DO NOT USE! Proxy will later be implemented for security and anonymity purposes.
+Berry is a simple DDoS script  Currently it is under no proxy so provided you have a VPN on, DO NOT USE! Proxy will later be implemented for security and anonymity purposes.
 
 ### Size
 N/A

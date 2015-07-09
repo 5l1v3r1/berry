@@ -21,7 +21,7 @@ from colorama import *
 init()
 
 #Extra Shizzzz / Not really important :/
-version = "0.0.1]"
+version = "0.0.2]"
 subprocess.call('clear', shell=True)
 
 def user_agents():

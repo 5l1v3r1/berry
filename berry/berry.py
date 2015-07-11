@@ -8,6 +8,8 @@
 """
 """
 import time,os,sys,string,random,subprocess,re,socket,httplib
+import subprocess as sbpr
+import socket as sckt
 from flask import Flask
 from termcolor import colored, cprint
 from colorama import *
@@ -102,7 +104,6 @@ def main():
 
         if choice == '2':
         	#Person I kinda stole from: https://github.com/kiripaul/DNS_lookup_AND_port_Scanner/blob/master/nslookup_prog.py just changed it 
-
         	server = raw_input("Enter Host: ")
 						
         if choice == '3':

@@ -1,4 +1,6 @@
 ### Berry
+
+[![Join the chat at https://gitter.im/Abrupt/berry](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Abrupt/berry?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Berry is a simple DDoS script  Currently it is under no proxy so provided you have a VPN on, DO NOT USE! Proxy will later be implemented for security and anonymity purposes.
 
 ### Size
